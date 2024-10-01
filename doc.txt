@@ -1,0 +1,32 @@
+* the defualt compiler generated a default :
+    * constructor
+    * destructor
+    * copy constructor
+=============Copy assignement operator=================
+* c++ gives us a free : 
+    * copy constructor
+    * copy assignement constructor, but it does a shallow copy.
+  ===> anytime we use new malloc any memory allocation function
+        where we have a pointer  we want to write your own 
+        copy constructor
+* copy assignement operator : 
+    is called for when an object has been constructed
+
+=====================fixed point==============
+* Fixed-point representation is a way of encoding real numbers 
+  within a computer using a fixed number of digits (bits) for the 
+  integer and fractional parts. In this representation, 
+  the position of the decimal (or binary) point is fixed, 
+  meaning that the number of digits allocated for the integer 
+  and fractional parts is predetermined.
+
+
+=====================the rule of three==========
+* is a best practise a guideline that tries to help write 
+  classes that manage external resources such as 
+  dynamically allocated memory safely.
+* the rule says basically if you include any one of those
+  methods: 1 - destructor
+           2 - copy constructor
+           3 - copy assignement constructor
+ in your class then you should probably include all three of them 
