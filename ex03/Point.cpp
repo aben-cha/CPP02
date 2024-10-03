@@ -26,8 +26,10 @@ Point& Point::operator=(const Point& rhs) {
         // const attributes cannot be assigned
         // so we do nothing here
     }
+    // return 
     return *this;
 }
+
 Point::~Point() {
     // std::cout << "Destructor called." << std::endl;
 }
