@@ -13,8 +13,11 @@
 #include "Point.hpp"
 
 Point create_vector(Point const a, Point const b) {
-    float x = b.getX().toFloat() - a.getX().toFloat();
-    float y = b.getY().toFloat() - a.getY().toFloat();
+    float x;
+    float y;
+    
+    x = b.getX().toFloat() - a.getX().toFloat();
+    y = b.getY().toFloat() - a.getY().toFloat();
     return Point(x, y);
 }
 

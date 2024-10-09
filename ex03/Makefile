@@ -1,6 +1,6 @@
 NAME= bsp
 CPP= c++
-CFLAGS= -Wall -Wextra -Werror -std=c++98 #-fsanitize=address # delete -std
+CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Fixed.hpp Point.hpp
 	$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:

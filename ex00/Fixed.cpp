@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int Fixed::fractionalBit = 8;
 

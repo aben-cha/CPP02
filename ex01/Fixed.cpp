@@ -44,17 +44,17 @@ void Fixed::setRawBits( int const raw ) {
 }
 
 Fixed::Fixed(const int intNbr) {
-    fixedPoint = intNbr * 256 + 0; // or fixedPoint = intNbr << 256
     std::cout << "Int constructor called" << std::endl;
+    fixedPoint = intNbr * 256 + 0; // or fixedPoint = intNbr << 256
 }
 
 Fixed::Fixed(const float floatNbr) {
+    std::cout << "Float constructor called" << std::endl;
     // int integerPart;
 
     // integerPart = floatNbr;
     // fixedPoint = integerPart * 256 + (floatNbr - integerPart) * 256; // floatNbr * 256
     fixedPoint = roundf(floatNbr * 256);
-    std::cout << "Float constructor called" << std::endl;
 }
 
 float Fixed::toFloat( void ) const {
