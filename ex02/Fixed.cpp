@@ -85,7 +85,6 @@ bool  Fixed::operator!=(const Fixed &rhs) const {
 
 Fixed Fixed::operator+(const Fixed &rhs) const {
     Fixed result;
-
     result.setRawBits(fixedPoint + rhs.fixedPoint);
     return (result);
 }
@@ -98,13 +97,13 @@ Fixed Fixed::operator-(const Fixed &rhs) const {
 
 Fixed Fixed::operator*(const Fixed &rhs) const {
     Fixed result;
-    result.setRawBits((fixedPoint * rhs.fixedPoint) / 256);
+    result.setRawBits((fixedPoint * rhs.fixedPoint) / (1 << fractionalBit));
     return result;
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const {
     Fixed result;
-    result.setRawBits(((fixedPoint * 256) / rhs.fixedPoint) );
+    result.setRawBits(((fixedPoint * (1 << fractionalBit)) / rhs.fixedPoint));
     return result;
 }
 
@@ -132,32 +131,25 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed& Fixed::min(Fixed& lhs, Fixed& rhs) {
-    // if (lhs < rhs)
-    //     return lhs;
-    if (lhs.fixedPoint < rhs.fixedPoint)
+    if (lhs < rhs)
         return lhs;
     return rhs;
 }
 
 const Fixed& Fixed::min(const Fixed& lhs, const Fixed& rhs) {
-    // if (lhs < rhs)
-    if (lhs.fixedPoint < rhs.fixedPoint)
+    if (lhs < rhs)
         return lhs;
     return rhs;
 }
 
 Fixed& Fixed::max(Fixed& lhs, Fixed& rhs) {
-    // if (lhs > rhs)
-    // std::cout << "max simple" << std::endl;
-    if (lhs.fixedPoint > rhs.fixedPoint)
+    if (lhs > rhs)
         return lhs;
     return rhs;
 }
 
 const Fixed& Fixed::max(const Fixed& lhs, const Fixed& rhs) {
-    // std::cout << "max const" << std::endl;
-    // if (lhs > rhs)
-    if (lhs.fixedPoint > rhs.fixedPoint)
+    if (lhs > rhs)
         return lhs;
     return rhs;
 }
