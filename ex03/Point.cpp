@@ -22,10 +22,7 @@ Point::Point(const Point& copy) : x(copy.x), y(copy.y) {
 }
 
 Point& Point::operator=(const Point& rhs) {
-    if (this != &rhs) {
-        // const attributes cannot be assigned
-        // so we do nothing here
-    }
+    (void)(rhs);
     return *this;
 }
 
@@ -33,7 +30,6 @@ Point::~Point() {
 }
 
 Fixed Point::getX() const {
-    std::cout << x.toFloat() << std::endl;
     return x;
 }
 Fixed Point::getY() const {

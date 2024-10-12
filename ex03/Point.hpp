@@ -29,8 +29,7 @@ class Point {
         Fixed getY() const;
 };
 
-Point create_vector(Point const a, Point const b);
-int crossProduct(Point const v1, Point const v2);
+int areaTriangle(Point const x1, Point const x2, Point const x3);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

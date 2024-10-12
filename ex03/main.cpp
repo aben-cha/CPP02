@@ -15,10 +15,10 @@
 
 int main( void ) {
     Point const a(0, 0);
-    Point const b(20, 0);
-    Point const c(0, 20);
-    Point const p(0.9, 0.9);
+    Point const b(5, 0);
+    Point const c(2.5, 5);
+    Point const p(2, 2);
 
-    std::cout << "bsp : " << bsp(a, b, c, p) << std::endl;
+    std::cout << bsp(a, b, c, p) << std::endl;
     return 0;
 }

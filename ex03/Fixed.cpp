@@ -18,10 +18,10 @@ Fixed::Fixed() : fixedPoint(0) {
 }
 
 Fixed::Fixed(const Fixed& copy) {
-    fixedPoint = copy.fixedPoint;
+    Fixed::operator=(copy);
 }
 
-Fixed& Fixed::operator=(const Fixed& rhs) {
+Fixed &Fixed::operator=(const Fixed& rhs) {
     if (this != &rhs)
         fixedPoint = rhs.fixedPoint;
     return *this;
@@ -39,22 +39,19 @@ void Fixed::setRawBits( int const raw ) {
 }
 
 Fixed::Fixed(const int intNbr) {
-    fixedPoint = intNbr * 256 + 0; // or fixedPoint = intNbr << 256
+    fixedPoint = intNbr << fractionalBit;
 }
 
 Fixed::Fixed(const float floatNbr) {
-    // int integerPart;
-
-    // integerPart = floatNbr;
-    // fixedPoint = integerPart * 256 + (floatNbr - integerPart) * 256; // floatNbr * 256
-    fixedPoint = roundf(floatNbr * 256);
+    fixedPoint = roundf(floatNbr * (1 << fractionalBit));
 }
 
 float Fixed::toFloat( void ) const {
-    return ((float)fixedPoint / 256);
+    return ((float)fixedPoint / (1 << fractionalBit));
 }
+
 int Fixed::toInt( void ) const {
-    return (fixedPoint / 256);
+    return (fixedPoint / (1 << fractionalBit));
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed& obj)
