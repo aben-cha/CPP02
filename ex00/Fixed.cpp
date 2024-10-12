@@ -20,7 +20,7 @@ Fixed::Fixed() : fixedPoint(0) {
 
 Fixed::Fixed(const Fixed& copy) {
     std::cout << "Copy constructor called" << std::endl;
-    fixedPoint = copy.getRawBits();
+    *this = copy;
 }
 
 Fixed& Fixed::operator=(const Fixed& rhs) {

@@ -14,10 +14,10 @@
 #include "Point.hpp"
 
 int main( void ) {
-    Point const a(0.5, 2.5);
-    Point const b(3.5, 1.5);
-    Point const c(2.0, 4.0);
-    Point const p(2.5, 2.0);
+    Point const a(0, 0);
+    Point const b(20, 0);
+    Point const c(0, 20);
+    Point const p(0.9, 0.9);
 
     std::cout << "bsp : " << bsp(a, b, c, p) << std::endl;
     return 0;

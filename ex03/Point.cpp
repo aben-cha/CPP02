@@ -33,6 +33,7 @@ Point::~Point() {
 }
 
 Fixed Point::getX() const {
+    std::cout << x.toFloat() << std::endl;
     return x;
 }
 Fixed Point::getY() const {
