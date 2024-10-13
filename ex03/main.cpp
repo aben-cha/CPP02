@@ -15,9 +15,9 @@
 
 int main( void ) {
     Point const a(0, 0);
-    Point const b(5, 0);
-    Point const c(2.5, 5);
-    Point const p(2, 2);
+    Point const b(3, 0);
+    Point const c(0, 3);
+    Point const p(1, 1);
 
     std::cout << bsp(a, b, c, p) << std::endl;
     return 0;

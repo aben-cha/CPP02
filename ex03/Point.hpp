@@ -29,7 +29,7 @@ class Point {
         Fixed getY() const;
 };
 
-int areaTriangle(Point const x1, Point const x2, Point const x3);
+float areaTriangle(Point const x1, Point const x2, Point const x3);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
